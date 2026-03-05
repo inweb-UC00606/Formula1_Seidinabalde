@@ -1,0 +1,34 @@
+#include <iostream>
+
+int main() {
+    int n;
+
+    std::cout << "Quantas voltas tem a prova? ";
+    std::cin >> n;
+
+    // Criar array com n voltas
+    float tempos[n];
+
+    // Ler tempos
+    for (int i = 0; i < n; i++) {
+        std::cout << "Tempo da volta " << i + 1 << ": ";
+        std::cin >> tempos[i];
+    }
+
+    // Encontrar a volta mais rápida
+    float melhorTempo = tempos[0];
+    int melhorVolta = 1;
+
+    for (int i = 1; i < n; i++) {
+        if (tempos[i] < melhorTempo) {
+            melhorTempo = tempos[i];
+            melhorVolta = i + 1;
+        }
+    }
+
+    // Mostrar resultado
+    std::cout << "A volta mais rapida foi a volta " << melhorVolta
+         << " com o tempo de " << melhorTempo << " minutos. ";
+
+    return 0;
+}
