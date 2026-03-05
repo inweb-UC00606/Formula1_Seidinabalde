@@ -1,0 +1,36 @@
+#include <iostream>
+
+int main() {
+    int n;
+
+    std::cout << "Quantas disciplinas tem o aluno? ";
+    std::cin >> n;
+
+    // Criar array para guardar as notas
+    float notas[n];
+
+    // Ler as notas
+    for (int i = 0; i < n; i++) {
+        std::cout << "Nota da disciplina " << i + 1 << ": ";
+        std::cin >> notas[i];
+    }
+
+    // Calcular a soma das notas
+    float soma = 0;
+    for (int i = 0; i < n; i++) {
+        soma += notas[i];
+    }
+
+    // Calcular a média
+    float media = soma / n;
+
+    // Mostrar resultados
+    std::cout << " Notas registadas: ";
+    for (int i = 0; i < n; i++) {
+        std::cout << "Disciplina " << i + 1 << ": " << notas[i] << std::endl;
+    }
+
+    std::cout << "Media final do aluno: " << media << std::endl;
+
+    return 0;
+}
